@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+         Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="0.9.3" use-changelog="false" last-position="0,0" last-zoom="1" max-obj-count="6"
+	 default-owner="postgres"
+	 layers="Default layer" active-layers="0">
+<database name="birds" is-template="false" allow-conns="true">
+</database>
+
+<schema name="public" layer="0" fill-color="#e1e1e1" sql-disabled="true">
+</schema>
+
+<table name="bird_species" layer="0" collapse-mode="2" max-obj-count="4" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="720" y="340"/>
+	<column name="spec" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="common_name">
+		<type name="text" length="0"/>
+	</column>
+	<column name="sci_name">
+		<type name="text" length="0"/>
+	</column>
+	<column name="spec6">
+		<type name="text" length="0"/>
+	</column>
+	<constraint name="bird_species_pk" type="pk-constr" table="public.bird_species">
+		<columns names="spec" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<index name="bird_species_6_idx" table="public.bird_species"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="spec6"/>
+		</idxelement>
+</index>
+
+<extension name="postgis">
+	<schema name="public"/>
+</extension>
+
+<table name="sscape_dates" layer="0" collapse-mode="2" max-obj-count="4" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1260" y="400"/>
+	<column name="id" not-null="true">
+		<type name="smallint" length="0"/>
+	</column>
+	<column name="site">
+		<type name="text" length="0"/>
+	</column>
+	<column name="string_date">
+		<type name="text" length="0"/>
+	</column>
+	<column name="date">
+		<type name="date" length="0"/>
+	</column>
+	<constraint name="sscape_dates_pk" type="pk-constr" table="public.sscape_dates">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="individual_calls" layer="0" collapse-mode="2" max-obj-count="14" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="640" y="620"/>
+	<column name="id" not-null="true"
+	 identity-type="ALWAYS">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="primary_label">
+		<type name="text" length="0"/>
+	</column>
+	<column name="secondary_labels">
+		<type name="text" length="0" dimension="1"/>
+	</column>
+	<column name="call_type">
+		<type name="text" length="0" dimension="1"/>
+	</column>
+	<column name="lat">
+		<type name="numeric" length="7" precision="4"/>
+	</column>
+	<column name="lon">
+		<type name="numeric" length="7" precision="4"/>
+	</column>
+	<column name="geog">
+		<type name="geography" length="0" spatial-type="POINT" variation="0" srid="4326"/>
+	</column>
+	<column name="author">
+		<type name="text" length="0"/>
+	</column>
+	<column name="date_string">
+		<type name="text" length="0"/>
+	</column>
+	<column name="date_recorded">
+		<type name="date" length="0"/>
+	</column>
+	<column name="filename">
+		<type name="text" length="0"/>
+	</column>
+	<column name="rating">
+		<type name="numeric" length="3" precision="1"/>
+	</column>
+	<constraint name="individual_calls_pk" type="pk-constr" table="public.individual_calls">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<index name="ind_calls_primary_species_idx" table="public.individual_calls"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="primary_label"/>
+		</idxelement>
+</index>
+
+<index name="ind_calls_geog_idx" table="public.individual_calls"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="gist" factor="0">
+		<idxelement use-sorting="false">
+			<column name="geog"/>
+		</idxelement>
+</index>
+
+<index name="ind_calls_rating_idx" table="public.individual_calls"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="btree" factor="0">
+		<idxelement use-sorting="false">
+			<column name="rating"/>
+		</idxelement>
+</index>
+
+<table name="soundscapes" layer="0" collapse-mode="2" max-obj-count="7" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1040" y="840"/>
+	<column name="row_id" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="site">
+		<type name="text" length="0"/>
+	</column>
+	<column name="audio_id">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="seconds_in">
+		<type name="smallint" length="0"/>
+	</column>
+	<column name="birds_string">
+		<type name="text" length="0"/>
+	</column>
+	<column name="birds_array">
+		<type name="text" length="0" dimension="1"/>
+	</column>
+	<constraint name="soundscapes_pk" type="pk-constr" table="public.soundscapes">
+		<columns names="row_id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="sscape_locations" layer="0" collapse-mode="2" max-obj-count="7" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1240" y="560"/>
+	<column name="id" not-null="true">
+		<type name="text" length="0"/>
+	</column>
+	<column name="place_name">
+		<type name="text" length="0"/>
+	</column>
+	<column name="country">
+		<type name="text" length="0"/>
+	</column>
+	<column name="lat">
+		<type name="numeric" length="6" precision="2"/>
+	</column>
+	<column name="lon">
+		<type name="numeric" length="6" precision="2"/>
+	</column>
+	<column name="geog">
+		<type name="geography" length="0" spatial-type="POINT" variation="0" srid="4326"/>
+	</column>
+	<constraint name="sscape_locations_pk" type="pk-constr" table="public.sscape_locations">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<index name="sscape_locations_geog_idx" table="public.sscape_locations"
+	 concurrent="false" unique="false" fast-update="false" buffering="false"
+	 index-type="gist" factor="0">
+		<idxelement use-sorting="false">
+			<column name="geog"/>
+		</idxelement>
+</index>
+
+</dbmodel>
