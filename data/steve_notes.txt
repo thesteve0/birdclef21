@@ -1,3 +1,10 @@
+How to spin up the Postgresql db
+docker run -d -p 5432:5432 -e PG_USER=groot -e PG_PASSWORD=postgres -e PG_DATABASE=birds --name=birdclef21 crunchydata/crunchy-postgres-appdev
+
+Then run the SQL to create the schema
+
+Data Cleaning Notes
+
 I deleted a bunch of non-essential columns from the train_metadata file
 
 Time field is a mess - it has different ways of denoting missing values, some entries use 24hr time while others use AM/PM, a few have leading spaces = more effort than it is worth
