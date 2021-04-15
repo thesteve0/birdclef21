@@ -8,3 +8,5 @@ Data Cleaning Notes
 I deleted a bunch of non-essential columns from the train_metadata file
 
 Time field is a mess - it has different ways of denoting missing values, some entries use 24hr time while others use AM/PM, a few have leading spaces = more effort than it is worth
+
+-- \COPY county_geometry (statefp, countyfp, countyns, geoid, county_name, namelsad, funcstat, aland, awater, interior_pnt, the_geom) from '~/git/crunchydemodata/county_boundaries/output/county_boundaries_copy.txt' WITH CSV QUOTE '"' HEADER TRUE;
