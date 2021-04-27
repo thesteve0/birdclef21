@@ -89,7 +89,6 @@ CREATE TABLE public.soundscapes (
 	site text,
 	audio_id integer,
 	seconds_in smallint,
-	birds_string text,
 	birds_array text[],
 	CONSTRAINT soundscapes_pk PRIMARY KEY (row_id)
 
@@ -116,5 +115,3 @@ CREATE INDEX sscape_locations_geog_idx ON public.sscape_locations
 	  geog
 	);
 -- ddl-end --
-
-

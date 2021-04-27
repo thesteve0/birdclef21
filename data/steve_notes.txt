@@ -9,4 +9,26 @@ I deleted a bunch of non-essential columns from the train_metadata file
 
 Time field is a mess - it has different ways of denoting missing values, some entries use 24hr time while others use AM/PM, a few have leading spaces = more effort than it is worth
 
--- \COPY county_geometry (statefp, countyfp, countyns, geoid, county_name, namelsad, funcstat, aland, awater, interior_pnt, the_geom) from '~/git/crunchydemodata/county_boundaries/output/county_boundaries_copy.txt' WITH CSV QUOTE '"' HEADER TRUE;
+In the train_metadata file you need to replace all [ and ] with { and }. You also need to replace all "" with ". Once that is done there are few other randoms error but they will reveal themselves when you run the command below
+
+\COPY individual_calls (primary_label,secondary_labels,call_type,lat,lon,author,date_string,filename,rating) from 'data/raw-data/sample_metadata.csv' With CSV QUOTE '"' HEADER;
+
+
+For the train_soundscape_labels the actual birds array is space separated so we you need to soundscape_cleaner.py to make it a proper array to work with \copy
+
+\COPY soundscapes (row_id, site, audio_id, seconds_in, birds_array) from 'data/raw-data/cleaned_train_soundscape.csv' With CSV  HEADER;
+
+\COPY bird_species  from 'data/raw-data/bird_species.csv' with CSV HEADER;
+
+\COPY sscape_dates (id, site, string_date)  from 'data/raw-data/SScape_dates.csv' with CSV HEADER;
+
+\COPY sscape_locations (id, place_name, country, lat, lon)  from 'data/raw-data/SScape_locations.csv' with CSV HEADER;
+
+
+update sscape_locations set geog = st_setsrid(st_point(lon,lat), 4326)::geography;
+
+Todo for tomorrow -
+Select all the recordings within 1000km (1000000 meters) from both COR and SSW
+Get distinct species - 2 from each site and should be distinct between the different sites
+
+Then pull all the recordings from those species at those sites

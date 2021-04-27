@@ -1,35 +1,35 @@
-acafly,['amegfi'],"['begging call', 'call', 'juvenile']",35.386,-84.125,Mike Nelson,2012-08-12,XC109605.ogg,2.5
-acafly,[],['call'],9.1334,-79.6501,Allen T. Chartier,2000-12-26,XC11209.ogg,3.0
-acafly,[],['call'],5.7813,-75.7452,Sergio Chaparro-Herrera,2012-01-10,XC127032.ogg,3.0
-acafly,['whwbec1'],['call'],4.6717,-75.6283,Oscar Humberto Marin-Gomez,2009-06-19,XC129974.ogg,3.5
-acafly,['whwbec1'],['call'],4.6717,-75.6283,Oscar Humberto Marin-Gomez,2009-06-19,XC129981.ogg,3.5
-acafly,[],['call'],4.6717,-75.6283,Oscar Humberto Marin-Gomez,2008-02-07,XC131193.ogg,3.0
-acafly,[],['song'],45.2748,-92.771,Garrett MacDonald,2012-05-25,XC133047.ogg,3.5
-acafly,"['whevir', 'norcar', 'yebcha']",['call'],30.41,-91.674,Dan Lane,1996-05-01,XC135020.ogg,3.5
-acafly,[],['song'],41.102,-74.437,Dan Lane,1995-06-09,XC135121.ogg,4.0
-acafly,"['yebcha', 'woothr', 'reevir1', 'amecro', 'norcar', 'comyel']","['call', 'song']",30.41,-91.674,Dan Lane,2013-06-04,XC136287.ogg,3.5
-acafly,"['prowar', 'reshaw', 'norcar', 'tuftit']",['call'],30.41,-91.674,Dan Lane,2013-06-04,XC136290.ogg,3.5
-acafly,"['carwre', 'reevir1', 'norcar', 'rebwoo', 'carchi', 'whevir', 'rezshaw', 'eastow']","['call', 'song']",30.41,-91.674,Dan Lane,2013-06-04,XC136301.ogg,3.5
-acowoo,[],['call'],35.5356,-120.7241,Thomas G. Graves,2007-03-18,XC125254.ogg,3.0
-acowoo,[],"['alarm call', 'call']",27.1716,-107.9846,Thore Noernberg,2013-02-24,XC125478.ogg,5.0
-acowoo,[],['call'],14.5413,-90.7006,Mike Nelson,2013-03-04,XC125508.ogg,4.0
-acowoo,"['chbwre1', 'mastro1', 'lesvio1', 'grethr1']","['contact calls', 'call']",5.716,-75.2583,Oscar H. Marín-Gómez,2010-01-06,XC129244.ogg,2.5
-acowoo,[],"['call', 'female', 'male']",5.716,-75.2583,Oscar H. Marín-Gómez,2010-01-06,XC129250.ogg,3.0
-acowoo,"['norcar', 'spotow', 'wewpew', 'bnhcow', 'whbnut']","['call', 'song']",31.912,-109.1426,Dan Lane,1990-07-03,XC135949.ogg,2.5
-acowoo,"['bewwre', 'spotow']",['call'],31.912,-109.1426,Dan Lane,1990-07-03,XC135964.ogg,3.5
-acowoo,[],['call'],31.4202,-110.269,Bobby Wilcox,2013-06-03,XC139095.ogg,3.0
-yetvir,[],"['adult', 'male', 'song']",31.9237,-81.0559,Russ Wigh,2020-05-25,XC562013.ogg,5.0
-yetvir,"['norcar', 'grcfly']","['adult', 'male', 'song']",29.6142,-83.3598,John Middleton,2020-05-15,XC562371.ogg,0.0
-yetvir,"['grcfly', 'indbun', 'comyel', 'eawpew', 'norcar', 'carwre']",['song'],43.2489,-79.9512,Doug Welch,2020-05-23,XC563870.ogg,0.0
-yetvir,[],['song'],44.8398,-93.3786,Michael Hurben,2020-06-04,XC565140.ogg,4.0
-yetvir,[],"['adult', 'song']",31.9827,-81.0235,Russ Wigh,2020-06-06,XC565814.ogg,5.0
-yetvir,['comyel'],"['adult', 'sex uncertain', 'song']",42.4508,-87.8015,Annette McClellan,2020-07-03,XC573213.ogg,3.5
-yetvir,[],"['adult', 'sex uncertain', 'song']",29.293,-100.4186,Phoenix Birder,2020-07-02,XC574089.ogg,5.0
-yetvir,[],"['aberrant', 'adult', 'male', 'song']",45.3488,-76.3558,Jon Ruddy,2020-07-10,XC574737.ogg,4.0
-yetvir,[],"['adult', 'call', 'song']",40.8918,-91.0756,Bobby Wilcox,2020-07-27,XC579823.ogg,4.0
-yetvir,"['eawpew', 'reevir1', 'amered', 'acafly']","['adult', 'male', 'song']",43.2167,-81.9021,Scott Connop,2020-06-09,XC583859.ogg,4.5
-yetvir,[],"['adult', 'male', 'song']",30.215,-97.6505,Caleb Helsel,2020-07-10,XC591680.ogg,1.0
-yetvir,[],"['life stage uncertain', 'sex uncertain', 'song']",42.3005,-72.5877,Christopher McPherson,2019-05-31,XC600085.ogg,5.0
-yetvir,"['amered', 'eawpew', 'norcar', 'reevir1']","['adult', 'male', 'song']",42.3005,-72.5877,Christopher McPherson,2020-06-02,XC602701.ogg,4.5
-yetvir,[],['uncertain'],32.2357,-99.8811,Brad Banner,2019-04-27,XC614733.ogg,4.0
-yetvir,"['gamqua', 'whwdov']","['adult', 'male', 'song']",31.906,-109.1543,Richard E. Webster,2020-05-26,XC615888.ogg,4.5
+acafly,{'amegfi'},"{'begging call', 'call', 'juvenile'}",35.386,-84.125,Mike Nelson,2012-08-12,XC109605.ogg,2.5
+acafly,{},{'call'},9.1334,-79.6501,Allen T. Chartier,2000-12-26,XC11209.ogg,3.0
+acafly,{},{'call'},5.7813,-75.7452,Sergio Chaparro-Herrera,2012-01-10,XC127032.ogg,3.0
+acafly,{'whwbec1'},{'call'},4.6717,-75.6283,Oscar Humberto Marin-Gomez,2009-06-19,XC129974.ogg,3.5
+acafly,{'whwbec1'},{'call'},4.6717,-75.6283,Oscar Humberto Marin-Gomez,2009-06-19,XC129981.ogg,3.5
+acafly,{},{'call'},4.6717,-75.6283,Oscar Humberto Marin-Gomez,2008-02-07,XC131193.ogg,3.0
+acafly,{},{'song'},45.2748,-92.771,Garrett MacDonald,2012-05-25,XC133047.ogg,3.5
+acafly,"{'whevir', 'norcar', 'yebcha'}",{'call'},30.41,-91.674,Dan Lane,1996-05-01,XC135020.ogg,3.5
+acafly,{},{'song'},41.102,-74.437,Dan Lane,1995-06-09,XC135121.ogg,4.0
+acafly,"{'yebcha', 'woothr', 'reevir1', 'amecro', 'norcar', 'comyel'}","{'call', 'song'}",30.41,-91.674,Dan Lane,2013-06-04,XC136287.ogg,3.5
+acafly,"{'prowar', 'reshaw', 'norcar', 'tuftit'}",{'call'},30.41,-91.674,Dan Lane,2013-06-04,XC136290.ogg,3.5
+acafly,"{'carwre', 'reevir1', 'norcar', 'rebwoo', 'carchi', 'whevir', 'rezshaw', 'eastow'}","{'call', 'song'}",30.41,-91.674,Dan Lane,2013-06-04,XC136301.ogg,3.5
+acowoo,{},{'call'},35.5356,-120.7241,Thomas G. Graves,2007-03-18,XC125254.ogg,3.0
+acowoo,{},"{'alarm call', 'call'}",27.1716,-107.9846,Thore Noernberg,2013-02-24,XC125478.ogg,5.0
+acowoo,{},{'call'},14.5413,-90.7006,Mike Nelson,2013-03-04,XC125508.ogg,4.0
+acowoo,"{'chbwre1', 'mastro1', 'lesvio1', 'grethr1'}","{'contact calls', 'call'}",5.716,-75.2583,Oscar H. Marín-Gómez,2010-01-06,XC129244.ogg,2.5
+acowoo,{},"{'call', 'female', 'male'}",5.716,-75.2583,Oscar H. Marín-Gómez,2010-01-06,XC129250.ogg,3.0
+acowoo,"{'norcar', 'spotow', 'wewpew', 'bnhcow', 'whbnut'}","{'call', 'song'}",31.912,-109.1426,Dan Lane,1990-07-03,XC135949.ogg,2.5
+acowoo,"{'bewwre', 'spotow'}",{'call'},31.912,-109.1426,Dan Lane,1990-07-03,XC135964.ogg,3.5
+acowoo,{},{'call'},31.4202,-110.269,Bobby Wilcox,2013-06-03,XC139095.ogg,3.0
+yetvir,{},"{'adult', 'male', 'song'}",31.9237,-81.0559,Russ Wigh,2020-05-25,XC562013.ogg,5.0
+yetvir,"{'norcar', 'grcfly'}","{'adult', 'male', 'song'}",29.6142,-83.3598,John Middleton,2020-05-15,XC562371.ogg,0.0
+yetvir,"{'grcfly', 'indbun', 'comyel', 'eawpew', 'norcar', 'carwre'}",{'song'},43.2489,-79.9512,Doug Welch,2020-05-23,XC563870.ogg,0.0
+yetvir,{},{'song'},44.8398,-93.3786,Michael Hurben,2020-06-04,XC565140.ogg,4.0
+yetvir,{},"{'adult', 'song'}",31.9827,-81.0235,Russ Wigh,2020-06-06,XC565814.ogg,5.0
+yetvir,{'comyel'},"{'adult', 'sex uncertain', 'song'}",42.4508,-87.8015,Annette McClellan,2020-07-03,XC573213.ogg,3.5
+yetvir,{},"{'adult', 'sex uncertain', 'song'}",29.293,-100.4186,Phoenix Birder,2020-07-02,XC574089.ogg,5.0
+yetvir,{},"{'aberrant', 'adult', 'male', 'song'}",45.3488,-76.3558,Jon Ruddy,2020-07-10,XC574737.ogg,4.0
+yetvir,{},"{'adult', 'call', 'song'}",40.8918,-91.0756,Bobby Wilcox,2020-07-27,XC579823.ogg,4.0
+yetvir,"{'eawpew', 'reevir1', 'amered', 'acafly'}","{'adult', 'male', 'song'}",43.2167,-81.9021,Scott Connop,2020-06-09,XC583859.ogg,4.5
+yetvir,{},"{'adult', 'male', 'song'}",30.215,-97.6505,Caleb Helsel,2020-07-10,XC591680.ogg,1.0
+yetvir,{},"{'life stage uncertain', 'sex uncertain', 'song'}",42.3005,-72.5877,Christopher McPherson,2019-05-31,XC600085.ogg,5.0
+yetvir,"{'amered', 'eawpew', 'norcar', 'reevir1'}","{'adult', 'male', 'song'}",42.3005,-72.5877,Christopher McPherson,2020-06-02,XC602701.ogg,4.5
+yetvir,{},{'uncertain'},32.2357,-99.8811,Brad Banner,2019-04-27,XC614733.ogg,4.0
+yetvir,"{'gamqua', 'whwdov'}","{'adult', 'male', 'song'}",31.906,-109.1543,Richard E. Webster,2020-05-26,XC615888.ogg,4.5
