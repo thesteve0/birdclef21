@@ -27,8 +27,7 @@ For the train_soundscape_labels the actual birds array is space separated so we 
 
 update sscape_locations set geog = st_setsrid(st_point(lon,lat), 4326)::geography;
 
-Todo for tomorrow -
-Select all the recordings within 1000km (1000000 meters) from both COR and SSW
-Get distinct species - 2 from each site and should be distinct between the different sites
+I made a directory containing some good black-capped chickadee calls and songs for exploration purposes. These are "clean" recordings with no other birds in them.
 
+TODO
 Then pull all the recordings from those species at those sites

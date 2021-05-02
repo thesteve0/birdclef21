@@ -11,17 +11,18 @@ CREATE TABLE public.bird_species (
 	spec text NOT NULL,
 	common_name text,
 	sci_name text,
-	spec6 text,
+	range text,
+	especies_group text,
 	CONSTRAINT bird_species_pk PRIMARY KEY (spec)
 
 );
 
 -- object: bird_species_6_idx | type: INDEX --
 -- DROP INDEX IF EXISTS public.bird_species_6_idx CASCADE;
-CREATE INDEX bird_species_6_idx ON public.bird_species
+CREATE INDEX bird_species_idx ON public.bird_species
 	USING btree
 	(
-	  spec6
+	  spec
 	);
 -- ddl-end --
 
