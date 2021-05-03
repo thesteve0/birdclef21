@@ -1,4 +1,5 @@
 import librosa
+import librosa.display
 import numpy as np
 import soundfile as sf
 
@@ -9,7 +10,12 @@ if __name__ == '__main__':
     output_dir = directory + 'output/'
 
     
-    sound_array, sample_rate = librosa.load(directory + filename, sr=None)
+    y, sample_rate = librosa.load(directory + filename, sr=None)
+
+    #Trim the silent edges from the file
+    sound_array, _ = librosa.effects.trim(y)
+
+    librosa.display.waveplot(sound_array, sr=sample_rate)
     print('loaded file')
     o_env = librosa.onset.onset_strength(sound_array, sr=sample_rate)
     #o_env = librosa.onset.onset_strength(sound_array, sr=sample_rate, feature=librosa.feature.chroma_cqt)
