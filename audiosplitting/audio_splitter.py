@@ -8,10 +8,7 @@ if __name__ == '__main__':
     directory = 'train_short_audio/bkcchi/'
     filename = 'XC121068.ogg'
     output_dir = directory + 'output/'
-
-    
     y, sample_rate = librosa.load(directory + filename, sr=None)
-
     #Trim the silent edges from the file
     sound_array, _ = librosa.effects.trim(y)
 
