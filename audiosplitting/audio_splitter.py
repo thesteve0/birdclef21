@@ -15,31 +15,26 @@ if __name__ == '__main__':
     print('loaded file')
 
     # TODO for now put this here while exploring but them move into the loop
-    n_fft = 2048
-    n_mels = 256
-    hop_length = 512
 
-    plt.figure(figsize=(40.48,15.60), edgecolor='black', facecolor='black')
-    plt.set_cmap('gray')
     
-    S = librosa.feature.melspectrogram(sound_array, sr=sample_rate, n_fft=n_fft, hop_length=hop_length, n_mels=n_mels, fmin=1600.0, fmax=11000)
-    S_DB = librosa.power_to_db(S, ref=np.max)                                                               
-    librosa.display.specshow(S_DB, sr=sample_rate, hop_length=hop_length)
+
     #plt.colorbar(format='%+2.0f dB')
     plt.show()
 
 
 
     #sample rate is samples per second so the length of the array divided by the sample rate tells us the seconds in the total track
-    
+
     track_length = round(len(sound_array)/sample_rate)
     chunk_length_sec = 5
     samples_per_chunk = sample_rate *chunk_length_sec
 
     #generate two arrays of start and stop points in sound_array indices
     time_steps = np.arange(0, track_length +1, chunk_length_sec).tolist()
-    if time_steps[-1] < track_length:
-        time_steps.append(track_length)
+    #if time_steps[-1] < track_length:
+        #time_steps.append(track_length)
+        #TODO we need to add 0 padding to the array to make the array divisiable by 5 seconds and add the new last 5 segment
+        #time to the time steps array
 
     # make two lists out of all the time steps we care about
     # time steps = [0,5,7]
@@ -50,6 +45,12 @@ if __name__ == '__main__':
 
     start_samples = list(map(lambda x: x * samples_per_chunk, start_times))
     stop_samples = list(map(lambda x: x * samples_per_chunk, stop_times))
+
+    n_fft = 2048
+    n_mels = 256
+    hop_length = 256  # This is basically the size of the window for averaging samples together
+
+    plt.figure(figsize=(60.48,15.60), edgecolor='black', facecolor='black')
 
 
     for i, (start, stop) in enumerate(zip(start_times, stop_times)):
@@ -64,7 +65,14 @@ if __name__ == '__main__':
 
         final_out_filename = output_dir + out_filename
 
-        # todo image writing goes here
+        #TODO need to solve the paaing exception here
+        # ValueError: can't extend empty axis 0 using modes other than 'constant' or 'empty'
+        S = librosa.feature.melspectrogram(audio, sr=sample_rate, n_fft=n_fft, hop_length=hop_length, n_mels=n_mels, fmin=1600.0, fmax=11000)
+        S_DB = librosa.power_to_db(S, ref=np.median, amin=0.0015)
+        librosa.display.specshow(S_DB, sr=sample_rate, hop_length=hop_length)
+
+        plt.savefig(final_out_filename, bbox_inches='tight', pad_inches=0)
+
         # Remove the black color using the method here
         # https://www.delftstack.com/howto/matplotlib/hide-axis-borders-and-white-spaces-in-matplotlib/
 
