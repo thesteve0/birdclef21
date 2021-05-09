@@ -2,6 +2,7 @@ import librosa
 import librosa.display
 import matplotlib.pyplot as plt
 import numpy as np
+import math
 import soundfile as sf
 
 
@@ -14,22 +15,13 @@ if __name__ == '__main__':
     sound_array, _ = librosa.effects.trim(y)
     print('loaded file')
 
-    # TODO for now put this here while exploring but them move into the loop
-
-    
-
-    #plt.colorbar(format='%+2.0f dB')
-    plt.show()
-
-
 
     #sample rate is samples per second so the length of the array divided by the sample rate tells us the seconds in the total track
-
-    track_length = round(len(sound_array)/sample_rate)
+    track_length = math.floor(librosa.get_duration(sound_array, sr=sample_rate))
     chunk_length_sec = 5
-    samples_per_chunk = sample_rate *chunk_length_sec
+    #samples_per_chunk = sample_rate * chunk_length_sec
 
-    #generate two arrays of start and stop points in sound_array indices
+    #determine how many chunks can fit into track and then make an array incrementing from 0 by 5 up to the total number of chunks
     time_steps = np.arange(0, track_length +1, chunk_length_sec).tolist()
     #if time_steps[-1] < track_length:
         #time_steps.append(track_length)
@@ -43,12 +35,12 @@ if __name__ == '__main__':
     start_times = time_steps[:-1]
     stop_times = time_steps[1:]
 
-    start_samples = list(map(lambda x: x * samples_per_chunk, start_times))
-    stop_samples = list(map(lambda x: x * samples_per_chunk, stop_times))
+    start_samples = list(map(lambda x: x * sample_rate, start_times))
+    stop_samples = list(map(lambda x: x * sample_rate, stop_times))
 
     n_fft = 2048
-    n_mels = 256
-    hop_length = 256  # This is basically the size of the window for averaging samples together
+    n_mels = 128
+    hop_length = 1024  # This is basically the size of the window for averaging samples together
 
     plt.figure(figsize=(60.48,15.60), edgecolor='black', facecolor='black')
 
@@ -64,11 +56,16 @@ if __name__ == '__main__':
         #write out the sliced array at the original sample rate
 
         final_out_filename = output_dir + out_filename
+        print('About to make: ' + final_out_filename)
 
-        #TODO need to solve the paaing exception here
-        # ValueError: can't extend empty axis 0 using modes other than 'constant' or 'empty'
         S = librosa.feature.melspectrogram(audio, sr=sample_rate, n_fft=n_fft, hop_length=hop_length, n_mels=n_mels, fmin=1600.0, fmax=11000)
-        S_DB = librosa.power_to_db(S, ref=np.median, amin=0.0015)
+
+        # amin represents the amplitude mininimum (related to DB) that is considered more than 0. The higher you make the number the more noise you remove
+        # but you may actually start to remove the information you want.
+        # ref represents the value of which you are standardzing all the values against. Possible choices are mean, median, max
+        S_DB = librosa.power_to_db(S, ref=np.mean, amin=0.0005)
+
+
         librosa.display.specshow(S_DB, sr=sample_rate, hop_length=hop_length)
 
         plt.savefig(final_out_filename, bbox_inches='tight', pad_inches=0)
