@@ -47,10 +47,9 @@ def audioToSlicedSpecto(input_file, output_stub):
         audio = sound_array[start_samples[i]:stop_samples[i]]
 
         # chop ogg off the file name
-        out_filename = out_file_prepped + '_' + str(start) + '_' + str(stop) + '.png'
-        #print('About to make: ' + out_filename)
-
-        S = librosa.feature.melspectrogram(audio, sr=sample_rate, n_fft=n_fft, hop_length=hop_length, n_mels=n_mels,
+        out_filename = ''.join((out_file_prepped, '_', str(start), '_', str(stop), '.png'))
+        mel = librosa.feature.melspectrogram
+        S = mel(audio, sr=sample_rate, n_fft=n_fft, hop_length=hop_length, n_mels=n_mels,
                                            fmin=1600.0, fmax=11000)
 
         # amin represents the amplitude mininimum (related to DB) that is considered more than 0. The higher you make the number the more noise you remove
@@ -58,20 +57,24 @@ def audioToSlicedSpecto(input_file, output_stub):
 
         # ref represents the value of which you are standardzing all the values against. Possible choices are mean, median, max
         # We actually ended up using the median of the entire audio clip to rescale the audio values in each individual clip
-        S_DB = librosa.power_to_db(S, ref=sound_array_median, amin=0.0015)
-        librosa.display.specshow(S_DB, sr=sample_rate, hop_length=hop_length)
+        p_to_d = librosa.power_to_db
+        S_DB = p_to_d(S, ref=sound_array_median, amin=0.0015)
+
+        spshow = librosa.display.specshow
+        spshow(S_DB, sr=sample_rate, hop_length=hop_length)
 
         # Remove the black color using the method here in the article and save to disk
         # https://www.delftstack.com/howto/matplotlib/hide-axis-borders-and-white-spaces-in-matplotlib/
         plt.savefig(out_filename, bbox_inches='tight', pad_inches=0)
+        plt.close()
 
 
 if __name__ == '__main__':
     # Input directory should be a single directory with every species in its own sub-directory and no directories below that
-    input_directory = r'C:\Users\steve\data\two_species'
+    input_directory = r'C:\Users\steve\data\six_species'
 
     # This script will make this directory
-    output_directory = r'C:\Users\steve\data\two_species\_output'
+    output_directory = r'C:\Users\steve\data\six_species\_output'
 
 
     # get all the folders and files using os.walk
