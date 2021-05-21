@@ -8,6 +8,7 @@ import os
 
 def audioToSlicedSpecto(input_file, output_stub):
 
+    chunk_length_sec = 5
     # Set some of the values we use for the Spectrogram
     n_fft = 2048
     n_mels = 256
@@ -21,7 +22,6 @@ def audioToSlicedSpecto(input_file, output_stub):
 
     # sample rate is samples per second so the length of the array divided by the sample rate tells us the seconds in the total track
     track_length = math.floor(librosa.get_duration(sound_array, sr=sample_rate))
-    chunk_length_sec = 5
 
     # determine how many chunks can fit into track and then make an array incrementing from 0 by 5 up to the total number of chunks
     time_steps = np.arange(0, track_length + 1, chunk_length_sec).tolist()
